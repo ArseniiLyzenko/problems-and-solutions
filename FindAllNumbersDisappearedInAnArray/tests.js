@@ -6,4 +6,8 @@ describe("funcName()", function() {
   it("[4,2,6,6,7,4,2] → [1,3,5]", function() {
     assert.deepEqual(funcName([4,2,6,6,7,4,2]), [1,3,5]);
   });
+
+  it("[4,2,6,1,7,5,3] → []", function() {
+    assert.deepEqual(funcName([4,2,6,1,7,5,3]), []);
+  });
 });
