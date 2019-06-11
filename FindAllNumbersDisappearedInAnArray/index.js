@@ -18,15 +18,18 @@ Output:
 
 function funcName(arr) {
   let lenOfArr = arr.length; // caching
-  let checked = new Array(lenOfArr);
   let missed = [];
 
   for (let i = 0; i < lenOfArr; i++) {
-    checked[arr[i] - 1] = true;
+    let index = Math.abs(arr[i]) - 1; // caching
+
+    if (arr[index] > 0) {
+      arr[index] = -arr[index];
+    }
   }
 
   for (let i = 0; i < lenOfArr; i++) {
-    if (!checked[i]) {
+    if (arr[i] > 0) {
       missed.push(i + 1);
     }
   }
