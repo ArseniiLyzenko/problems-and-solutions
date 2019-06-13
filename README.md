@@ -2,7 +2,7 @@
 Solutions (+tests) for problems
 
 ---
-#### Hamming Distance
+### Hamming Distance
 
 The Hamming distance between two integers is the number of positions at which the corresponding bits are different.
 Given two integers x and y, calculate the Hamming distance.   
@@ -24,7 +24,7 @@ The above arrows point to positions where the corresponding bits are different.
 [Solution](HammingDistance/index.js)
 
 ---
-#### Find All Numbers Disappeared in an Array
+### Find All Numbers Disappeared in an Array
 
 Given an array of integers where 1 ≤ a[i] ≤ n (n = size of array), some elements appear twice and others appear once.  
 Find all the elements of [1, n] inclusive that do not appear in this array.  
@@ -41,7 +41,7 @@ Output:
 [Solution](FindAllNumbersDisappearedInAnArray/index.js)
 
 ---
-#### Find All Anagrams in a String
+### Find All Anagrams in a String
 
 Given a string s and a non-empty string p, find all the start indices of p's anagrams in s.
 Strings consists of lowercase English letters only and the length of both strings s and p will not be larger than 20,100.
