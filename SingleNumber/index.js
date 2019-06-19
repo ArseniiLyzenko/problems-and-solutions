@@ -19,15 +19,11 @@ Output: 4
 */
 
 function findSingleNumber(nums) {
-  let extraMemo  = {};
+  let uniqNum = 0;
 
   for (let num of nums) {
-    if (num in extraMemo) {
-      delete extraMemo[num];
-    } else {
-      extraMemo[num] = null;
-    }
+    uniqNum ^= num;
   }
 
-  return Object.keys(extraMemo)[0];
+  return uniqNum;
 }
