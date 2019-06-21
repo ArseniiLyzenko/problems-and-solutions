@@ -26,7 +26,7 @@ can’t invert a binary tree on a whiteboard so f*** off.
 */
 
 function invertBinTree(tree) {
-  if (!tree.left && !tree.right) return;
+  if (!tree.left && !tree.right) return tree;
 
   swapBranches(tree);
 
