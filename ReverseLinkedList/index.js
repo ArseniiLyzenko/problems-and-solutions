@@ -49,3 +49,19 @@ function arrayToList(arr) {
 
   return list;
 }
+
+function reverseLinkedList_rec(linkedList, prevNode = null) {
+  if (!linkedList) return null;
+
+  //handling last node
+  if (!linkedList.next) {
+    linkedList.next = prevNode;
+    return linkedList;
+  }
+
+  let reversed = reverseLinkedList_rec(linkedList.next, linkedList);
+
+  linkedList.next = prevNode;
+
+  return reversed;
+}
