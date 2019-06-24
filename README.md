@@ -166,3 +166,17 @@ This problem was inspired by this original tweet by Max Howell:
 > Google: 90% of our engineers use the software you wrote (Homebrew), but you can’t invert a binary tree on a whiteboard so f*** off.
 
 [Solution](InvertBinaryTree/index.js)
+
+---
+### Reverse Linked List
+
+Reverse a singly linked list.
+
+Example:
+```
+Input: 1->2->3->4->5->NULL
+Output: 5->4->3->2->1->NULL
+```
+Follow up: a linked list can be reversed either iteratively or recursively. Could you implement both?
+
+[Solution](ReverseLinkedList/index.js)
