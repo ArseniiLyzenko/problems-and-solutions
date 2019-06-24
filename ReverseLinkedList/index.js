@@ -13,41 +13,22 @@ Could you implement both?
 */
 
 function reverseLinkedList_iter(linkedList) {
-  if (!linkedList) return null;
+  let prev = null;
+  let next;
 
-  linkedList = listToArray(linkedList);
-  linkedList = linkedList.reverse();
-  linkedList = arrayToList(linkedList);
+  while (linkedList) {
+    next = linkedList.next;
+    linkedList.next = prev;
+    prev = linkedList;
+    linkedList = next;
+  }
 
-  return linkedList;
+  return prev;
 }
 
 function ListNode(val, next = null) {
   this.val = val;
   this.next = next;
-}
-
-function listToArray(list) {
-  let arr = [];
-  let current = list;
-  while (current.next) {
-    arr.push(current.val);
-    current = current.next;
-  }
-  arr.push(current.val);
-
-  return arr;
-}
-
-function arrayToList(arr) {
-  let list;
-  let nextRest;
-  for (let i = arr.length - 1; i >= 0; --i) {
-    nextRest = list || null;
-    list = new ListNode(arr[i], nextRest);
-  }
-
-  return list;
 }
 
 function reverseLinkedList_rec(linkedList, prevNode = null) {
