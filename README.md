@@ -180,3 +180,19 @@ Output: 5->4->3->2->1->NULL
 Follow up: a linked list can be reversed either iteratively or recursively. Could you implement both?
 
 [Solution](ReverseLinkedList/index.js)
+
+---
+### Reverse Linked List
+
+Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+
+Example:
+```
+Input: [0,1,0,3,12]
+Output: [1,3,12,0,0]
+```
+Note:   
+You must do this in-place without making a copy of the array.   
+Minimize the total number of operations.
+
+[Solution](MoveZeroes/index.js)
