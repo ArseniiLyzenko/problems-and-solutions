@@ -13,6 +13,18 @@ Minimize the total number of operations.
 */
 
 function moveZeroes(nums) {
+  let nonZeroCounter = 0;
+
+  for (let num of nums) {
+    if (num) {
+      nums[nonZeroCounter] = num;
+      nonZeroCounter++;
+    }
+  }
+
+  for (let i = nonZeroCounter, len = nums.length; i < len; i++) {
+    nums[i] = 0;
+  }
 
   return nums;
 }
