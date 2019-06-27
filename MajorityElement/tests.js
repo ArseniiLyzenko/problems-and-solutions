@@ -11,7 +11,7 @@ describe("findMajorElement()", function() {
     assert.equal(findMajorElement([1]), 1);
   });
 
-  it("[2, 2, 1, 3, 1, 2, 2] → 2", function() {
-    assert.equal(findMajorElement([2, 2, 1, 3, 1, 2, 2]), 2);
+  it("[5, 5, 1, 3, 1, 5, 5] → 5", function() {
+    assert.equal(findMajorElement([5, 5, 1, 3, 1, 5, 5]), 5);
   });
 });
