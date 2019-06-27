@@ -17,5 +17,37 @@ Output: 2
 */
 
 function findMajorElement(nums) {
-  
+  let specialSet = new SpecialSet();
+
+  for (let num of nums) {
+    specialSet.add(num);
+  }
+
+  return findKeyWithMaxValue(specialSet);
 }
+
+class SpecialSet {
+
+  add(num) {
+    if (num in this) {
+      this[num]++;
+    } else {
+      this[num] = 1;
+    }
+  };
+
+}
+
+function findKeyWithMaxValue(obj) {
+  let maxKey = maxVal = -Infinity;
+
+  for (let [key, val] of Object.entries(obj)) {
+    if (maxVal < val) {
+      maxKey = key;
+      maxVal = val;
+    }
+  }
+
+  return maxKey;
+}
+
