@@ -15,3 +15,13 @@ describe("findMajorElement()", function() {
     assert.equal(findMajorElement([5, 5, 1, 3, 1, 5, 5]), 5);
   });
 });
+
+describe("findKeyWithMaxValue()", function() {
+  it("{1: 4, 2: 8, 3: 5} → 2", function() {
+    assert.equal(findKeyWithMaxValue({1: 4, 2: 8, 3: 5}), 2);
+  });
+
+  it("{a: 4, b: 8, c: 5} → b", function() {
+    assert.equal(findKeyWithMaxValue({a: 4, b: 8, c: 5}), "b");
+  });
+});
