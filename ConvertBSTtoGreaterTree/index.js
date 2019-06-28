@@ -16,7 +16,8 @@ Output: The root of a Greater Tree like this:
           20    13
 */
 
-function convertToGreaterTree(tree, sum = 0) {
+function convertToGreaterTree(tree, sum = 0/*move the sum out of func, It will
+ reduce space complexity*/) {
   if (!tree) return sum;
 
   sum = tree.val += convertToGreaterTree(tree.right, sum);
