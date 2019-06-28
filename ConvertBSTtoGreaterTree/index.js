@@ -16,10 +16,13 @@ Output: The root of a Greater Tree like this:
           20    13
 */
 
-function  convertToGreaterTree(tree) {
+function convertToGreaterTree(tree, sum = 0) {
+  if (!tree) return sum;
 
+  sum = tree.val += convertToGreaterTree(tree.right, sum);
+  sum = convertToGreaterTree(tree.left, sum);
 
-  return tree;
+  return sum;
 }
 
 function TreeNode(val, left = null, right = null) {
@@ -27,3 +30,5 @@ function TreeNode(val, left = null, right = null) {
   this.left = left;
   this.right = right;
 }
+
+
