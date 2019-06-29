@@ -67,8 +67,7 @@ describe("mergeTwoSortedLists()", function() {
     let output = new ListNode(1,
                   new ListNode(2,
                     new ListNode(3,
-                      new ListNode(5,
-                      )
+                      new ListNode(5)
                     )
                   )
                 );
@@ -88,7 +87,34 @@ describe("mergeTwoSortedLists()", function() {
     let output = new ListNode(1,
                   new ListNode(3,
                     new ListNode(4,
+                      new ListNode(5)
+                    )
+                  )
+                );
+
+    assert.deepEqual(mergeTwoSortedLists(...input), output);
+  });
+
+  it("5->5->5, 1->1->2 → 1->1->2->5->5->5", function() {
+    let input = [
+      new ListNode(5,
+        new ListNode(5,
+          new ListNode(5)
+        )
+      ),
+      new ListNode(1,
+        new ListNode(1,
+          new ListNode(2)
+        )
+      )
+    ];
+    let output = new ListNode(1,
+                  new ListNode(1,
+                    new ListNode(2,
                       new ListNode(5,
+                        new ListNode(5,
+                          new ListNode(5)
+                        )
                       )
                     )
                   )
