@@ -25,8 +25,14 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 
 function findBestProfit(nums) {
   let bestProfit = 0;
+  let profit = 0;
 
-  
+  for (let i = 0, len = nums.length; i< len; i++) {
+    for (let j = i + 1; j < len; j++) {
+      profit = nums[j] - nums[i];
+      if (profit > bestProfit) bestProfit = profit;
+    }
+  }
 
   return bestProfit;
 }
