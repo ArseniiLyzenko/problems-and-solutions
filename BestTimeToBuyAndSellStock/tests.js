@@ -18,4 +18,8 @@ describe("findBestProfit()", function() {
   it("[3, 2, 1, 2, 3] → 2", function() {
     assert.equal(findBestProfit([3, 2, 1, 2, 3]), 2);
   });
+
+  it("[5, 3, 7, 1, 6, 4] → 5", function() {
+    assert.equal(findBestProfit([5, 3, 7, 1, 6, 4]), 5);
+  });
 });
