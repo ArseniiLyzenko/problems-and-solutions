@@ -19,7 +19,22 @@ Note: The length of path between two nodes is represented by the number
 */
 
 function findBinTreeDiameter(tree) {
+  let diameter = 0;
 
+  findBinTreeDiameter_helper(tree);
+
+  return diameter;
+
+  function findBinTreeDiameter_helper(tree) {
+    if (!tree) return 0;
+
+    let left = findBinTreeDiameter_helper(tree.left);
+    let right = findBinTreeDiameter_helper(tree.right);
+
+    diameter = Math.max(diameter, left + right);
+
+    return Math.max(left, right) + 1;
+  }
 }
 
 function TreeNode(val, left = null, right = null) {
