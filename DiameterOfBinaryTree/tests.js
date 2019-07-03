@@ -1,5 +1,5 @@
 describe("findBinTreeDiameter()", function() {
-  it("(1) - (2,3) - (4,5,null,null) → 4", function() {
+  it("(1) - (2,3) - (4,5,null,null) → 3", function() {
     let tree = new TreeNode(1,
                   new TreeNode(2,
                     new TreeNode(4),
