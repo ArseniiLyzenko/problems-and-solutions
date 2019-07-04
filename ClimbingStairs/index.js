@@ -27,19 +27,9 @@ Explanation: There are three ways to climb to the top.
 */
 
 function climbingStairs(numOfSteps) {
-
-  return fibonacci(numOfSteps + 1);
-
-  function fibonacci(fibIndex) {
-    let fibNum = 0;
-    let next = 1;
-
-    for (let i = 0; i < fibIndex; i++) {
-      let temp = next;
-      next += fibNum;
-      fibNum = temp;
-    }
-
-    return fibNum;
-  }
+  let sqrt5 = Math.sqrt(5);
+  let fibNum =
+    Math.pow((1 + sqrt5) / 2, numOfSteps + 1) -
+    Math.pow((1 - sqrt5) / 2, numOfSteps + 1);
+  return Number.parseInt(fibNum / sqrt5);
 }
