@@ -28,4 +28,18 @@ Explanation: There are three ways to climb to the top.
 
 function climbingStairs(numOfSteps) {
 
+  return fibonacci(numOfSteps + 1);
+
+  function fibonacci(fibIndex) {
+    let fibNum = 0;
+    let next = 1;
+
+    for (let i = 0; i < fibIndex; i++) {
+      let temp = next;
+      next += fibNum;
+      fibNum = temp;
+    }
+
+    return fibNum;
+  }
 }
