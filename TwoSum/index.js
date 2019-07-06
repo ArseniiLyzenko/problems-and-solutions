@@ -14,9 +14,18 @@ return [0, 1].
 */
 
 function twoSum(nums, target) {
-  for (let [index1, num1] of nums.entries()) {
-    for (let [index2, num2] of nums.entries()) {
-      if (num1 + num2 === target && num1 !== num2) return [index1, index2] ;
+  let specialDataStructure = new SpecialDataStructure(nums);
+
+  for (let [index, num] of nums.entries()) {
+    if (typeof specialDataStructure[target - num] !== 'undefined')
+      return [specialDataStructure[target - num], index].sort((a,b) => a - b);
+  }
+}
+
+class SpecialDataStructure {
+  constructor(nums) {
+    for (let [index, num] of nums.entries()) {
+      this[num] = index;
     }
   }
 }
