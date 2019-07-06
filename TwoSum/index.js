@@ -13,6 +13,10 @@ Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].
 */
 
-function twoSum() {
-
+function twoSum(nums, target) {
+  for (let [index1, num1] of nums.entries()) {
+    for (let [index2, num2] of nums.entries()) {
+      if (num1 + num2 === target) return [index1, index2] ;
+    }
+  }
 }
