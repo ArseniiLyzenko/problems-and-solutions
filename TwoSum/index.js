@@ -16,7 +16,7 @@ return [0, 1].
 function twoSum(nums, target) {
   for (let [index1, num1] of nums.entries()) {
     for (let [index2, num2] of nums.entries()) {
-      if (num1 + num2 === target) return [index1, index2] ;
+      if (num1 + num2 === target && num1 !== num2) return [index1, index2] ;
     }
   }
 }
