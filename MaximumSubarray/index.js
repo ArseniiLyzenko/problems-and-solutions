@@ -4,7 +4,7 @@ one number) which has the largest sum and return its sum.
 
 Example:
 
-Input: [-2,1,-3,4,-1,2,1,-5,4],
+Input: [-2, 1, -3, 4, -1, 2, 1, -5, 4],
 Output: 6
 Explanation: [4,-1,2,1] has the largest sum = 6.
 Follow up:
@@ -12,6 +12,16 @@ Follow up:
 If you have figured out the O(n) solution, try coding another solution using
 the divide and conquer approach, which is more subtle.
 */
-function findMaximumSubarray() {
 
+function findMaximumSubarray(nums) {
+  let sum = 0;
+  let largestSum = 0;
+
+  for (let num of nums) {
+    sum += num;
+    if (largestSum < sum) largestSum = sum;
+    if (sum < 0) sum = 0;
+  }
+
+  return largestSum;
 }
