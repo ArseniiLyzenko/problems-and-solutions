@@ -31,6 +31,14 @@ moves.
 */
 
 function isRobotReturnToOrigin(moves) {
+  let U = D = L = R = 0;
 
-  return result;
+  for (move of moves) {
+    if (move === 'U') U++;
+    if (move === 'D') D++;
+    if (move === 'L') L++;
+    if (move === 'R') R++;
+  }
+
+  return U === D && L === R;
 }
