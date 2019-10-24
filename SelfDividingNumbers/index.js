@@ -19,6 +19,20 @@ The boundaries of each input argument are 1 <= left <= right <= 10000.
 */
 
 function findSelfDividingNumbers(left, right) {
+  let selfDividingNumbers = [];
+  let stringifiedNumber = '';
 
-  return array;
+  outer_loop:
+  for (let i = left; i <= right; i++) {
+    stringifiedNumber = i.toString();
+
+    for (let char of stringifiedNumber) {
+      if (i % Number(char) !== 0)
+        continue outer_loop;
+    }
+
+    selfDividingNumbers.push(i);
+  }
+
+  return selfDividingNumbers;
 }
