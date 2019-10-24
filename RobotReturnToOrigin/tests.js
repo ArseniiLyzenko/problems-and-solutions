@@ -10,4 +10,10 @@ describe("isRobotReturnToOrigin()", function() {
   it(`${input} → ${output}`, function() {
     assert.equal(isRobotReturnToOrigin(input), output);
   });
+
+  input = 'URDL';
+  output = true;
+  it(`${input} → ${output}`, function() {
+    assert.equal(isRobotReturnToOrigin(input), output);
+  });
 });
