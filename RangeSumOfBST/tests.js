@@ -8,7 +8,7 @@ describe("calcRangeSumOfBST()", function() {
   left = 7;
   right = 15;
   output = 32;
-  it(`${input} → ${output}`, function() {
+  it(`root = [${root}], left = ${left}, right = ${right} → ${output}`, function() {
     assert.equal(calcRangeSumOfBST(input), output);
   });
 
@@ -16,7 +16,7 @@ describe("calcRangeSumOfBST()", function() {
   left = 6;
   right = 10;
   output = 23;
-  it(`${input} → ${output}`, function() {
+  it(`root = [${root}], left = ${left}, right = ${right} → ${output}`, function() {
     assert.equal(calcRangeSumOfBST(input), output);
   });
 });
