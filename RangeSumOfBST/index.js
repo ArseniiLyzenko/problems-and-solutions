@@ -18,6 +18,11 @@ The final answer is guaranteed to be less than 2^31.
 */
 
 function calcRangeSumOfBST(root, left, right) {
+  let sum = 0;
 
-  return result;
+  for (let num of root) {
+    if (left <= num && num <= right) sum += num;
+  }
+
+  return sum;
 }
