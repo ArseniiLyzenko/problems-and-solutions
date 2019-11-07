@@ -37,6 +37,8 @@ const morseAlphabet = [".-","-...","-.-.","-..",".","..-.","--.","....","..",
   ".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-",
   "...-",".--","-..-","-.--","--.."];
 
+const englishAlphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+
 function uniqueMorseRepresentations() {
 
 }
