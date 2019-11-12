@@ -39,6 +39,12 @@ const morseAlphabet = [".-","-...","-.-.","-..",".","..-.","--.","....","..",
 
 const englishAlphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
+let dictionary = {};
+for (let i = 0, l = morseAlphabet.length; i < l; i++) {
+  dictionary[englishAlphabet[i]] = morseAlphabet[i];
+}
+console.log(dictionary);
+
 function uniqueMorseRepresentations() {
 
 }
