@@ -39,11 +39,21 @@ const morseAlphabet = [".-","-...","-.-.","-..",".","..-.","--.","....","..",
 
 const englishAlphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
-let dictionary = {};
-for (let i = 0, l = morseAlphabet.length; i < l; i++) {
-  dictionary[englishAlphabet[i]] = morseAlphabet[i];
+class Dictionary {
+  constructor(keysAlphabet, valuesAlphabet) {
+    if (keysAlphabet.length !== valuesAlphabet.length)
+      throw new RangeError('The number of keys and values do not match.');
+
+    for (let i = 0, l = valuesAlphabet.length; i < l; i++) {
+      this[keysAlphabet[i]] = valuesAlphabet[i];
+    }
+
+    console.log('Dictionary is created');
+    console.log(this);
+  }
 }
-console.log(dictionary);
+
+const englishMorseDictionary = new Dictionary(englishAlphabet, morseAlphabet);
 
 function uniqueMorseRepresentations() {
 
