@@ -55,6 +55,19 @@ class Dictionary {
 
 const englishMorseDictionary = new Dictionary(englishAlphabet, morseAlphabet);
 
-function uniqueMorseRepresentations() {
+function uniqueMorseRepresentations(words) {
+  words = new Set(words);
+  let uniqueRepresentations = new Set();
 
+  for (let word of words) {
+    let morseWord = '';
+
+    for (let char of word) {
+      morseWord += englishMorseDictionary[char];
+    }
+
+    uniqueRepresentations.add(morseWord);
+  }
+
+  return uniqueRepresentations.size;
 }
