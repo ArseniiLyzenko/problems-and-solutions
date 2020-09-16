@@ -47,5 +47,63 @@ Constraints:
  * @return {number[]}
  */
 function mostVisited(n, rounds) {
+  let result = [rounds[0]];
 
+  for (let i = 0, len = rounds.length - 1; i < len; i++) {
+    result.push(findRound(n, [rounds[i], rounds[i+1]]))
+  }
+
+  result = findMostFrequentElements(result.flat());
+
+  return result.sort((a,b) => {return b - b});
+}
+
+/**
+ * @param {number} n
+ * @param {number[]} bounds
+ * @return {number[]}
+ * */
+
+function findRound(n, bounds) {
+  let result = [];
+
+  for (let i = bounds[0]; true; i++) {
+    result.push(i);
+
+    if (i === bounds[1]) break;
+    if (i === n) i = 0;
+
+  }
+
+  return result.slice(1);
+}
+
+/**
+ * @param {number} nums
+ * @return {number}
+ * */
+
+function findMostFrequentElements(nums) {
+  let mostFrequentElements = [];
+  counters = {};
+
+  for (const num of nums) {
+    if (counters.hasOwnProperty(num)) {
+      counters[num]++;
+    } else {
+      counters[num] = 1;
+    }
+  }
+
+  let max = -Infinity;
+
+  for (const key in counters) {
+    if (max < counters[key]) max = counters[key];
+  }
+
+  for (const key in counters) {
+    if (counters[key] === max) mostFrequentElements.push(+key);
+  }
+
+  return mostFrequentElements;
 }
