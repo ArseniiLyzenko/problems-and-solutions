@@ -36,73 +36,35 @@ function romanToInteger(romanNum) {
 
     if (i + 1 < len) {
       pair = romanNum[i] + romanNum[i + 1];
-      if (pair === 'IV') {
-        resultInteger += 4;
-        i++;
-        continue;
-      }
 
-      if (pair === 'IX') {
-        resultInteger += 9;
-        i++;
-        continue;
-      }
-
-      if (pair === 'XL') {
-        resultInteger += 40;
-        i++;
-        continue;
-      }
-
-      if (pair === 'XC') {
-        resultInteger += 90;
-        i++;
-        continue;
-      }
-
-      if (pair === 'CD') {
-        resultInteger += 400;
-        i++;
-        continue;
-      }
-
-      if (pair === 'CM') {
-        resultInteger += 900;
+      if (romanSpecialCases.hasOwnProperty(pair)) {
+        resultInteger += romanSpecialCases[pair];
         i++;
         continue;
       }
     }
 
-    switch (romanNum[i]) {
-      case 'I':
-        resultInteger += 1;
-        break;
-
-      case 'V':
-        resultInteger += 5;
-        break;
-
-      case 'X':
-        resultInteger += 10;
-        break;
-
-      case 'L':
-        resultInteger += 50;
-        break;
-
-      case 'C':
-        resultInteger += 100;
-        break;
-
-      case 'D':
-        resultInteger += 500;
-        break;
-
-      case 'M':
-        resultInteger += 1000;
-        break;
-    }
+    resultInteger += romanDictionary[romanNum[i]];
   }
 
   return resultInteger;
+}
+
+const romanDictionary = {
+  'I': 1,
+  'V': 5,
+  'X': 10,
+  'L': 50,
+  'C': 100,
+  'D': 500,
+  'M': 1000,
+}
+
+const romanSpecialCases = {
+  'IV': 4,
+  'IX': 9,
+  'XL': 40,
+  'XC': 90,
+  'CD': 400,
+  'CM': 900,
 }
