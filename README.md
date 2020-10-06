@@ -524,7 +524,7 @@ Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 
 
 ---
-### Roman to Integer
+### Design Parking System
 
 Design a parking system for a parking lot. The parking lot has three kinds of 
 parking spaces: big, medium, and small, with a fixed number of slots for each 
@@ -563,4 +563,4 @@ Constraints:
  - carType is 1, 2, or 3
  - At most 1000 calls will be made to addCar
 
-[Solution](RomanToInteger/index.js)
+[Solution](DesignParkingSystem/index.js)
